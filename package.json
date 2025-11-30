@@ -1,0 +1,22 @@
+{
+  "name": "minibankapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "globals": "^16.5.0",
+    "nodemon": "^3.1.11"
+  }
+}
