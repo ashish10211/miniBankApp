@@ -1,22 +1,21 @@
-import express from 'express';
+const express = require('express');
+const path = require('path');
 
-const TRANSACTIONS_FILE = '../csvData/transactions.csv';
-
+const TRANSACTIONS_FILE = path.join(__dirname, '../../data/transactions.csv');
 
 const transactionsRoute = (transactionsService) => {
-   const router = express.Router();
+  const router = express.Router();
 
   router.put('/transactions', async (req, res) => {
     try {
-    const updatedBalanceSheet = await transactionsService.updateBalanceSheet(TRANSACTIONS_FILE);
-    res.json({ message: 'Balance sheet updated successfully', data: updatedBalanceSheet });
-
+      await transactionsService.processPaymentAdjustments(TRANSACTIONS_FILE);
+      res.sendStatus(204);
     } catch (error) {
-      res.status(500).json({success: false, message: error.message})
+      res.status(500).json({ success: false, message: error.message });
     }
   });
 
   return router;
-}
+};
 
-export default transactionsRoute;
+module.exports = transactionsRoute;

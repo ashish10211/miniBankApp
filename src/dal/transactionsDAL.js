@@ -1,15 +1,17 @@
+const { readCSV, writeCSV } = require('../utils/csvUtils');
+
+const FILE_NAME = 'UpdatedCSV';
+
 const transactionsDAL = () => {
+  const updateBalanceSheet = (updatedBalanceSheet) => {
+    return writeCSV(FILE_NAME, updatedBalanceSheet);
+  };
 
-const updateBalanceSheet = (transactionsData) => {
-     return transactionsData;
-}
+  const getBalanceSheet = (filePath) => {
+    return readCSV(filePath);
+  };
 
-const getAccountDetails = (accountNumber) => {
-     return accountNumber;
-}
+  return { updateBalanceSheet, getBalanceSheet };
+};
 
-  return { updateBalanceSheet , getAccountDetails };
-}
-
-
-export default transactionsDAL;
+module.exports = transactionsDAL;

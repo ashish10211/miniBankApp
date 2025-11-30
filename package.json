@@ -5,18 +5,25 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "lint:fix": "eslint src/**/*.js --fix"
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
+    "csv-parse": "^6.1.0",
     "csv-parser": "^3.2.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "jest": "^30.2.0"
   },
   "devDependencies": {
+    "fs": "^0.0.1-security",
     "globals": "^16.5.0",
-    "nodemon": "^3.1.11"
+    "json2csv": "^6.0.0-alpha.2",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.3",
+    "supertest": "^7.1.4"
   }
 }
