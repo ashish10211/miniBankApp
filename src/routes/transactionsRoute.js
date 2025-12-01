@@ -1,12 +1,12 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
-const TRANSACTIONS_FILE = path.join(__dirname, '../../data/transactions.csv');
+const TRANSACTIONS_FILE = path.join(__dirname, "../../data/transactions.csv");
 
 const transactionsRoute = (transactionsService) => {
   const router = express.Router();
 
-  router.put('/transactions', async (req, res) => {
+  router.put("/transactions", async (req, res) => {
     try {
       await transactionsService.processPaymentAdjustments(TRANSACTIONS_FILE);
       res.sendStatus(204);

@@ -8,7 +8,7 @@ const applyTransaction = (transaction, balanceSheetMap) => {
 };
 
 const applyTransactions = (transactions, balanceSheetMap) => {
-  transactions.forEach(tx => applyTransaction(tx, balanceSheetMap));
+  transactions.forEach((tx) => applyTransaction(tx, balanceSheetMap));
 };
 
 module.exports = {
